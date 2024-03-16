@@ -17,3 +17,6 @@
 #EOF
 #git apply example.patch
 
+sed -i 's/8mlzma/16mlzma/g' target/linux/ath79/image/generic.mk
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/mw4530r/g' package/base-files/files/bin/config_generate
