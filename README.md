@@ -4,7 +4,7 @@
 - Password: [null]
 - Lan IP: 192.168.2.1
 ----
-** Build-in Apps **
+**Build-in Apps**
 - luci-app-arpbind
 - luci-app-hd-idle [381 KB]
 - luci-app-socat [84.8 KB]
@@ -23,7 +23,7 @@
 - [X] luci-app-rclone
 - [X] luci-app-ssr-plus
 
-** Additional Build-in Apps **
+**Additional Build-in Apps**
 - openssh-sftp-server [53.5 KB]
 - bash
 
