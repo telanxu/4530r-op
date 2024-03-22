@@ -36,4 +36,4 @@
 #EOF
 #git apply example.patch
 
-sed -i '3i src-git kiddin9 https://github.com/kiddin9/openwrt-packages' feeds.conf.default
+# sed -i '3i src-git kiddin9 https://github.com/kiddin9/openwrt-packages' feeds.conf.default
