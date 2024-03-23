@@ -36,5 +36,5 @@
 #EOF
 #git apply example.patch
 
-sed -i '3i src-git jerrykuku https://github.com/jerrykuku/luci-theme-argon.git' feeds.conf.default
+# sed -i '3i src-git jerrykuku https://github.com/jerrykuku/luci-theme-argon.git' feeds.conf.default
  
