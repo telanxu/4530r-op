@@ -143,6 +143,13 @@ jobs:
           sudo mkdir -p /workdir/
           sudo chown $USER:$GROUPS /workdir/
 
+      - name: CACHE toolchain
+        uses: klever1988/cachewrtbuild@main
+        with:
+          ccache: 'true'
+          mixkey: 'ramips'
+          prefix: 'openwrt'
+
       - name: Clone source code
         working-directory: /workdir
         run: |
