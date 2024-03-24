@@ -159,15 +159,10 @@ jobs:
       - name: Update feeds
         run: |
           cd openwrt/ && ./scripts/feeds update -a
-          echo "upgrade golang ver.1.22+"
-          rm -rf feeds/packages/lang/golang && git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
       - name: Install feeds
         run: |
           cd openwrt/ && ./scripts/feeds install -a
-          echo "add upx and ucl to tools(Only needed for OpenWRT Or. Source)"
-#          mv package/feeds/kiddin9/upx tools
-#          mv package/feeds/kiddin9/ucl tools
 
       - name: Load custom configuration
         run: |
@@ -191,7 +186,6 @@ jobs:
         id: download-packages
         run: |
           cd openwrt/
-          make defconfig
           make download -j8
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
