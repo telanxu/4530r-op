@@ -13,7 +13,7 @@
 #-------------------------------------------------------------------------------------------------------
 
 # Workflow name which is showed in GitHub Actions.
-name: Build Official OpenWRT Firmware for Mecury MW4530r (16M Mod)
+name: Official w/ Lienol Setting for Mecury MW4530r (16M Mod)
 
 on:
   workflow_dispatch:
