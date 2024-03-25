@@ -1,22 +1,11 @@
-
-#
-
 name: Build Official OpenWRT Firmware for Mecury MW4530r (16M Mod)
 
 on:
   workflow_dispatch:
-    inputs:
-      force-build:
-        description: "Build new firmware anyway"
-        required: false
-        default: "false"
-      ssh:
-        description: "SSH connection to Actions"
-        required: false
-        default: "false"
-# Uncomment the following to run regularly. Note that the cron expression here does not contain seconds.
-#  schedule:
-#    - cron: 0 */18 * * *
+#   schedule:
+#     - cron: 0 18 * * *
+#
+
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
