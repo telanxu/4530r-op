@@ -19,33 +19,6 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
-  check:
-    name: Check for source code updates
-    runs-on: ubuntu-latest
-    outputs:
-      cache-hit: ${{ steps.cache-hash.outputs.cache-hit }}
-
-    steps:
-      - name: Get Commit Hash
-        id: get-hash
-        run: |
-          git clone --depth 1 --branch $REPO_BRANCH --single-branch $REPO_URL ./
-          echo "commit-hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-
-      - name: Compare Commit Hash
-        id: cache-hash
-        uses: actions/cache@main
-        with:
-          path: .${{ env.REPO_NAME }}-${{ env.REPO_BRANCH }}-commit-hash
-          key: HEAD-${{ steps.get-hash.outputs.commit-hash }}
-
-      - name: Save New Commit Hash
-        if: steps.cache-hash.outputs.cache-hit != 'true'
-        run: |
-          echo ${{ steps.get-hash.outputs.commit-hash }} | 
-            tee .$REPO_NAME-$REPO_BRANCH-commit-hash
-
-jobs:
   Build:
     runs-on: ubuntu-22.04
 
