@@ -10,7 +10,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: v23.05.3
-  CONFIG_FILE: 4530r-or.config
+  CONFIG_FILE: diff.config
   DIY_SCRIPT: diy-script.sh
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -161,13 +161,12 @@ jobs:
 
     - name: Upload Firmware To Release
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
-      uses: ncipollo/release-action@v1
+      uses: softprops/action-gh-release@master
       with:
-        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
-        allowUpdates: true
-        tag: ${{ env.FIRMWARE_TAG }}
+        tag_name: ${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: ${{ env.FIRMWARE_PATH }}/*
+        body_path: ${{ env.FIRMWARE_PATH }}
+        files: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
