@@ -21,11 +21,11 @@ env:
   # You can modify the REPO_NAME to any name you want, but remember not to let it have the same name in 
   # other workflows.
   REPO_NAME: Official OpenWRT
-  REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v23.05.3
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   # CONFIG_FILE is the name of your own config files for compiling, you should upload these files into the root 
   # directory of your workflow repo.
-  CONFIG_FILE: seed3.config
+  CONFIG_FILE: seed4-lean.config
   # CUSTOM_SCRIPT_1 is the name of extra bash script you want to execute before feeds update&install.
   # CUSTOM_SCRIPT_2 is the name of extra bash script you want to execute after feeds update&install.
   # You can modify the initial settings of your firmware through these two scripts. If this is what you need,
